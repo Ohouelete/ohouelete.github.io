@@ -117,7 +117,7 @@ footer{padding-top:24px;padding-bottom:24px;border-top:1px solid var(--line);fon
     <p class="tagline rise r4" data-i18n="tagline">Je transforme des données d'enquête et des séries financières en analyses claires et en outils automatisés.</p>
     <div class="actions rise r5">
       <a class="btn btn-primary" href="#projets" data-i18n="ctaProjects">Voir mes projets</a>
-      <a class="btn btn-ghost" href="#" data-i18n="ctaCv">Télécharger mon CV</a>
+      <a class="btn btn-ghost" href="cv.pdf" target="_blank" rel="noopener" data-i18n="ctaCv">Télécharger mon CV</a>
     </div>
   </div>
   <div class="card chart">
@@ -140,7 +140,6 @@ footer{padding-top:24px;padding-bottom:24px;border-top:1px solid var(--line);fon
   </div>
   <div class="about-body">
     <p data-i18n="about1"></p>
-    <p data-i18n="about2"></p>
     <div class="facts" id="facts"></div>
   </div>
 </section>
@@ -177,9 +176,9 @@ footer{padding-top:24px;padding-bottom:24px;border-top:1px solid var(--line);fon
       <p data-i18n="contactSub">Écris-moi, je réponds rapidement.</p>
     </div>
     <div class="actions">
-      <a class="btn btn-primary" href="mailto:courriel@exemple.com">[TON COURRIEL]</a>
-      <a class="btn btn-ghost" href="#">LinkedIn</a>
-      <a class="btn btn-ghost" href="#">GitHub</a>
+      <a class="btn btn-primary" href="mailto:amarckland@gmail.com">amarckland@gmail.com</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/ohou%C3%A9l%C3%A9t%C3%A9-marck-land-ahouansou-6b6b03239" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/Ohouelete" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </section>
@@ -196,9 +195,8 @@ const T = {
     tagline: "Je transforme des données d'enquête et des séries financières en analyses claires et en outils automatisés.",
     ctaProjects: 'Voir mes projets', ctaCv: 'Télécharger mon CV',
     aboutKicker: 'à propos', aboutTitle: 'Qui je suis',
-    about1: "Diplômé en statistique et science des données de l'Université Laval, je travaille comme conseiller en recherche et enquêtes à la CNESST. J'ai aussi été assistant de recherche en économétrie financière et représentant étudiant élu.",
-    about2: "[CE QUI TE MOTIVE : 2 OU 3 PHRASES SUR CE QUE TU AIMES DANS LES DONNÉES ET CE QUE TU CHERCHES]",
-    facts: [ ['Basé à', 'Québec'], ['Langues', 'Français · Anglais'], ['Disponible pour', '[TYPE DE POSTE]'] ],
+    about1: "Diplômé en statistique et science des données de l'Université Laval, j'ai été conseiller en recherche et enquêtes à la CNESST et assistant de recherche en économétrie financière. J'ai aussi été auxiliaire d'enseignement en probabilités et statistique, et représentant étudiant à l'Association des statisticiennes et statisticiens du Québec.",
+    facts: [ ['Basé à', 'Québec'], ['Langues', 'Français · Anglais'], ['Formation', 'B.Sc. statistique et science des données'] ],
     projKicker: 'projets', projTitle: 'Projets choisis',
     projects: [
       { meta: 'Économétrie financière · Assistanat de recherche', title: 'Réplication de Rapach et al. (2013)', desc: "Construction et validation d'une base de données en panel sur les indices boursiers mondiaux, avec des pipelines Python et des statistiques descriptives en Python et Stata.", tags: ['Python', 'Stata', 'Données de panel'], href: '#', link: 'Voir le projet →' },
@@ -206,9 +204,9 @@ const T = {
       { meta: 'Recherche par enquête · CNESST', title: "Automatisation de rapports d'enquête", desc: "Génération automatisée de rapports de résultats d'enquête en PowerPoint à partir des données, pour produire des livrables cohérents plus rapidement.", tags: ['python-pptx', 'pptxgenjs', "Méthodologie d'enquête"], href: '#contact', link: 'En savoir plus →' }
     ],
     skillsKicker: 'compétences', skillsTitle: 'Ce que je maîtrise',
-    skills: [ ['Langages et outils', 'Python, R, Stata 17, Git'], ['Économétrie', 'Données de panel, Newey-West, causalité de Granger'], ['Modélisation', 'Modèles mixtes, régression de Poisson, régression Ridge'], ['Enquêtes', "Méthodologie d'enquête, analyse et production de rapports"] ],
+    skills: [ ['Langages et outils', 'Python, R, SAS, SQL, Stata, Power BI, Git'], ['Modélisation', 'Modèles mixtes, régression linéaire et logistique, séries temporelles, apprentissage automatique'], ['Économétrie', 'Données de panel, Newey-West, causalité de Granger'], ['Enquêtes et données', "Méthodologie d'enquête, validation de données, MongoDB, Neo4j"] ],
     pathKicker: 'parcours', pathTitle: 'Parcours',
-    path: [ ['[ANNÉES]', 'Conseiller en recherche et enquêtes', 'CNESST'], ['Mai – août 2026', 'Assistant de recherche', 'Université Laval, sous la direction du professeur Fu'], ['2026', 'Baccalauréat en statistique et science des données', 'Université Laval'] ],
+    path: [ ['Mai – août 2026', 'Assistant de recherche, analyse de données financières', 'Université Laval'], ['Mai 2025 – août 2026', 'Conseiller en recherche, enquête et sondage client', 'CNESST'], ['Janv. 2024 – mai 2026', 'Auxiliaire d\'enseignement', 'Université Laval'], ['2023 – 2026', 'Baccalauréat en statistique et science des données', 'Université Laval'] ],
     contactTitle: 'Un projet, un poste, une question ?', contactSub: 'Écris-moi, je réponds rapidement.'
   },
   en: {
@@ -218,9 +216,8 @@ const T = {
     tagline: 'I turn survey data and financial time series into clear analyses and automated tools.',
     ctaProjects: 'See my projects', ctaCv: 'Download my resume',
     aboutKicker: 'about', aboutTitle: 'Who I am',
-    about1: "I hold a degree in statistics and data science from Université Laval and work as a research and survey advisor at the CNESST, Quebec's workplace health and safety board. I was also a research assistant in financial econometrics and an elected student representative.",
-    about2: '[WHAT DRIVES YOU: 2 OR 3 SENTENCES ON WHAT YOU ENJOY ABOUT DATA AND WHAT YOU ARE LOOKING FOR]',
-    facts: [ ['Based in', 'Quebec City'], ['Languages', 'French · English'], ['Open to', '[ROLE TYPE]'] ],
+    about1: "I hold a degree in statistics and data science from Université Laval. I worked as a research and survey advisor at the CNESST, Quebec's workplace health and safety board, and as a research assistant in financial econometrics. I was also a teaching assistant in probability and statistics, and a student representative for the Quebec association of statisticians (ASSQ).",
+    facts: [ ['Based in', 'Quebec City'], ['Languages', 'French · English'], ['Education', 'B.Sc. Statistics and Data Science'] ],
     projKicker: 'projects', projTitle: 'Selected projects',
     projects: [
       { meta: 'Financial econometrics · Research assistantship', title: 'Replicating Rapach et al. (2013)', desc: 'Built and validated a panel database of global stock indices, with Python pipelines and descriptive statistics in Python and Stata.', tags: ['Python', 'Stata', 'Panel data'], href: '#', link: 'View project →' },
@@ -228,9 +225,9 @@ const T = {
       { meta: 'Survey research · CNESST', title: 'Automated survey reporting', desc: 'Automated generation of PowerPoint survey result reports straight from the data, delivering consistent reports faster.', tags: ['python-pptx', 'pptxgenjs', 'Survey methodology'], href: '#contact', link: 'Learn more →' }
     ],
     skillsKicker: 'skills', skillsTitle: 'What I do well',
-    skills: [ ['Languages & tools', 'Python, R, Stata 17, Git'], ['Econometrics', 'Panel data, Newey-West, Granger causality'], ['Modeling', 'Mixed models, Poisson regression, Ridge regression'], ['Surveys', 'Survey methodology, analysis and reporting'] ],
+    skills: [ ['Languages & tools', 'Python, R, SAS, SQL, Stata, Power BI, Git'], ['Modeling', 'Mixed models, linear and logistic regression, time series, machine learning'], ['Econometrics', 'Panel data, Newey-West, Granger causality'], ['Surveys & data', 'Survey methodology, data validation, MongoDB, Neo4j'] ],
     pathKicker: 'experience', pathTitle: 'Experience',
-    path: [ ['[YEARS]', 'Research and survey advisor', 'CNESST'], ['May – Aug 2026', 'Research assistant', 'Université Laval, supervised by Professor Fu'], ['2026', 'B.Sc. in Statistics and Data Science', 'Université Laval'] ],
+    path: [ ['May – Aug 2026', 'Research assistant, financial data analysis', 'Université Laval'], ['May 2025 – Aug 2026', 'Research, survey and client polling advisor', 'CNESST'], ['Jan 2024 – May 2026', 'Teaching assistant', 'Université Laval'], ['2023 – 2026', 'B.Sc. in Statistics and Data Science', 'Université Laval'] ],
     contactTitle: 'A project, a role, a question?', contactSub: 'Drop me a line, I reply quickly.'
   }
 };
