@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marck-Land — Statistique et science des données</title>
+<meta name="description" content="Portfolio de Marck-Land, statisticien et scientifique des données à Québec : économétrie financière, biostatistique et recherche par enquête.">
+<meta property="og:title" content="Marck-Land — Portfolio">
+<meta property="og:description" content="Statistique · science des données · Québec">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E1116'/%3E%3Cpolyline points='5,22 12,16 18,19 27,8' fill='none' stroke='%237EE0B5' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E1116;--panel:#161B22;--line:#2A323D;--line2:#3A4554;--text:#E6EDF3;--soft:#C5CED9;--muted:#8C97A5;--nav:#B6C0CC;--accent:#7EE0B5;--accent2:#7FA7F5}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:17px;line-height:1.6}
+a{color:var(--accent)}a:hover{color:#B4F2D6}
+.wrap{max-width:1180px;margin:0 auto;padding-left:24px;padding-right:24px}
+.mono{font-family:'JetBrains Mono',monospace}
+.display{font-family:'Space Grotesk',sans-serif}
+header{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding-top:28px;padding-bottom:28px}
+.logo{font-size:15px;color:var(--text);text-decoration:none}
+.logo span{color:var(--accent)}
+nav{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.navlink{padding:10px 14px;color:var(--nav);text-decoration:none;font-size:15px;transition:color .2s}
+.navlink:hover{color:var(--text)}
+.lang{display:flex;border:1px solid var(--line2);border-radius:8px;overflow:hidden;margin:0 4px}
+.lang button{padding:8px 12px;min-height:40px;border:0;cursor:pointer;font:500 13px 'JetBrains Mono',monospace;background:transparent;color:var(--nav)}
+.lang button[aria-pressed="true"]{background:var(--accent);color:var(--bg)}
+.btn{display:inline-block;padding:14px 22px;border-radius:10px;text-decoration:none;transition:transform .2s ease,filter .2s ease}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn-primary{background:var(--accent);color:var(--bg);font-weight:500}
+.btn-primary:hover{color:var(--bg)}
+.btn-ghost{border:1px solid var(--line2);color:var(--text)}
+.btn-ghost:hover{color:var(--text)}
+.btn-sm{padding:10px 16px;border-radius:8px;font-size:15px}
+.hero{display:flex;flex-wrap:wrap;gap:48px;align-items:center;padding-top:64px;padding-bottom:96px}
+.hero-text{flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.photo{width:128px;height:128px;border-radius:50%;border:2px solid var(--accent);background:var(--panel);display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;color:var(--muted);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.kicker{margin:0;font-size:14px;color:var(--accent)}
+h1{margin:0;font-weight:700;font-size:clamp(48px,8vw,72px);line-height:1.02;letter-spacing:-.02em}
+.tagline{margin:0;font-size:22px;line-height:1.5;color:var(--soft);max-width:560px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;padding-top:8px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.chart{flex:1 1 380px;min-width:0;padding:24px}
+.chart-head,.chart-foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:12px;color:var(--muted)}
+.chart-head{padding-bottom:12px}.chart-foot{padding-top:12px;justify-content:flex-start}
+section{padding-top:48px;padding-bottom:96px}
+.sec-head{display:flex;flex-direction:column;gap:8px}
+h2{margin:0;font-size:clamp(34px,5vw,44px);line-height:1.1}
+.about{display:flex;flex-wrap:wrap;gap:48px}
+.about-head{flex:1 1 280px;min-width:0}
+.about-body{flex:2 1 520px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.about-body p{margin:0;font-size:19px;color:var(--soft)}
+.facts{display:flex;flex-wrap:wrap;gap:12px;padding-top:8px}
+.fact{flex:1 1 180px;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.fact .k{font-size:12px;color:var(--muted)}.fact .v{font-size:16px;font-weight:500}
+.stack{display:flex;flex-direction:column;gap:32px}
+.grid{display:flex;flex-wrap:wrap;gap:24px}
+.project{flex:1 1 320px;min-width:0;padding:28px;display:flex;flex-direction:column;gap:16px}
+.project .meta{margin:0;font-size:12px;color:var(--muted)}
+.project h3{margin:0;font-size:26px;line-height:1.2}
+.project p.desc{margin:0;color:var(--soft)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.tag{font-size:12px;padding:4px 10px;border:1px solid var(--line2);border-radius:999px;color:var(--soft)}
+.project a{font-size:15px;padding:10px 0}
+.skill{flex:1 1 260px;min-width:0;border-top:2px solid var(--accent);padding-top:20px;display:flex;flex-direction:column;gap:8px}
+.skill h3{margin:0;font-size:20px}.skill p{margin:0;color:var(--soft)}
+.row{display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-bottom:1px solid var(--line)}
+.row .when{flex:0 0 200px;font-size:14px;color:var(--muted)}
+.row div{flex:1 1 400px;min-width:0}
+.row h3{margin:0;font-size:19px;font-weight:500}.row p{margin:0;color:var(--soft)}
+.contact{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:56px 40px;display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between}
+.contact > div:first-child{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.contact h2{font-size:clamp(30px,4vw,40px);line-height:1.15}
+.contact p{margin:0;color:var(--soft)}
+footer{padding-top:24px;padding-bottom:24px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.draw{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2s ease-out forwards}
+.d2{animation-delay:.25s}.d3{animation-delay:.5s}
+.dot{opacity:0;animation:fade .4s ease-out 2.4s forwards}
+.rise{opacity:0;transform:translateY(16px);animation:rise .7s ease-out forwards}
+.r2{animation-delay:.12s}.r3{animation-delay:.24s}.r4{animation-delay:.36s}.r5{animation-delay:.48s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (max-width:600px){.contact{padding:36px 24px}.row .when{flex-basis:100%}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.draw,.dot,.rise{animation:none;opacity:1;transform:none;stroke-dashoffset:0}.card,.btn,.navlink{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <a class="logo mono" href="#accueil">marck-land<span>.</span>dev</a>
+  <nav data-i18n-attr="aria-label:navLabel" aria-label="Navigation principale">
+    <a class="navlink" href="#apropos" data-i18n="navAbout">À propos</a>
+    <a class="navlink" href="#projets" data-i18n="navProjects">Projets</a>
+    <a class="navlink" href="#competences" data-i18n="navSkills">Compétences</a>
+    <a class="navlink" href="#parcours" data-i18n="navPath">Parcours</a>
+    <div class="lang" role="group" aria-label="Langue / Language">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-primary btn-sm" href="#contact" data-i18n="navContact">Me contacter</a>
+  </nav>
+</header>
+
+<main>
+<div id="accueil" class="wrap hero">
+  <div class="hero-text">
+    <div class="photo rise"><img src="photo.jpg" alt="Marck-Land" width="128" height="128"></div>
+    <p class="kicker mono rise r2" data-i18n="kicker">// statistique · science des données · Québec</p>
+    <h1 class="display rise r3">Marck-Land</h1>
+    <p class="tagline rise r4" data-i18n="tagline">Je transforme des données d'enquête et des séries financières en analyses claires et en outils automatisés.</p>
+    <div class="actions rise r5">
+      <a class="btn btn-primary" href="#projets" data-i18n="ctaProjects">Voir mes projets</a>
+      <a class="btn btn-ghost" href="#" data-i18n="ctaCv">Télécharger mon CV</a>
+    </div>
+  </div>
+  <div class="card chart">
+    <div class="chart-head mono"><span>indices_mondiaux.csv</span><span>t →</span></div>
+    <svg viewBox="0 0 400 220" width="100%" aria-hidden="true">
+      <g stroke="#2A323D" stroke-width="1"><line x1="0" y1="55" x2="400" y2="55"/><line x1="0" y1="110" x2="400" y2="110"/><line x1="0" y1="165" x2="400" y2="165"/></g>
+      <polyline class="draw" fill="none" stroke="#5B6675" stroke-width="2" points="0,150 40,140 80,148 120,120 160,128 200,104 240,112 280,88 320,96 360,72 400,80"/>
+      <polyline class="draw d2" fill="none" stroke="#7FA7F5" stroke-width="2" points="0,170 40,162 80,150 120,158 160,138 200,142 240,124 280,130 320,110 360,116 400,98"/>
+      <polyline class="draw d3" fill="none" stroke="#7EE0B5" stroke-width="3" points="0,120 40,112 80,96 120,104 160,80 200,86 240,62 280,70 320,48 360,54 400,34"/>
+      <circle class="dot" cx="400" cy="34" r="5" fill="#7EE0B5"/>
+    </svg>
+    <div class="chart-foot mono"><span>Python</span><span>R</span><span>Stata 17</span></div>
+  </div>
+</div>
+
+<section id="apropos" class="wrap about">
+  <div class="about-head sec-head">
+    <p class="kicker mono">01 / <span data-i18n="aboutKicker">à propos</span></p>
+    <h2 class="display" data-i18n="aboutTitle">Qui je suis</h2>
+  </div>
+  <div class="about-body">
+    <p data-i18n="about1"></p>
+    <p data-i18n="about2"></p>
+    <div class="facts" id="facts"></div>
+  </div>
+</section>
+
+<section id="projets" class="wrap stack">
+  <div class="sec-head">
+    <p class="kicker mono">02 / <span data-i18n="projKicker">projets</span></p>
+    <h2 class="display" data-i18n="projTitle">Projets choisis</h2>
+  </div>
+  <div class="grid" id="projects"></div>
+</section>
+
+<section id="competences" class="wrap stack">
+  <div class="sec-head">
+    <p class="kicker mono">03 / <span data-i18n="skillsKicker">compétences</span></p>
+    <h2 class="display" data-i18n="skillsTitle">Ce que je maîtrise</h2>
+  </div>
+  <div class="grid" id="skills"></div>
+</section>
+
+<section id="parcours" class="wrap stack">
+  <div class="sec-head">
+    <p class="kicker mono">04 / <span data-i18n="pathKicker">parcours</span></p>
+    <h2 class="display" data-i18n="pathTitle">Parcours</h2>
+  </div>
+  <div id="path"></div>
+</section>
+
+<section id="contact" class="wrap">
+  <div class="contact">
+    <div>
+      <p class="kicker mono">05 / contact</p>
+      <h2 class="display" data-i18n="contactTitle">Un projet, un poste, une question ?</h2>
+      <p data-i18n="contactSub">Écris-moi, je réponds rapidement.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:courriel@exemple.com">[TON COURRIEL]</a>
+      <a class="btn btn-ghost" href="#">LinkedIn</a>
+      <a class="btn btn-ghost" href="#">GitHub</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap mono">© <span id="year">2026</span> Marck-Land · Québec</footer>
+
+<script>
+const T = {
+  fr: {
+    navLabel: 'Navigation principale', navAbout: 'À propos', navProjects: 'Projets', navSkills: 'Compétences', navPath: 'Parcours', navContact: 'Me contacter',
+    photo: '[TA PHOTO]',
+    kicker: '// statistique · science des données · Québec',
+    tagline: "Je transforme des données d'enquête et des séries financières en analyses claires et en outils automatisés.",
+    ctaProjects: 'Voir mes projets', ctaCv: 'Télécharger mon CV',
+    aboutKicker: 'à propos', aboutTitle: 'Qui je suis',
+    about1: "Diplômé en statistique et science des données de l'Université Laval, je travaille comme conseiller en recherche et enquêtes à la CNESST. J'ai aussi été assistant de recherche en économétrie financière et représentant étudiant élu.",
+    about2: "[CE QUI TE MOTIVE : 2 OU 3 PHRASES SUR CE QUE TU AIMES DANS LES DONNÉES ET CE QUE TU CHERCHES]",
+    facts: [ ['Basé à', 'Québec'], ['Langues', 'Français · Anglais'], ['Disponible pour', '[TYPE DE POSTE]'] ],
+    projKicker: 'projets', projTitle: 'Projets choisis',
+    projects: [
+      { meta: 'Économétrie financière · Assistanat de recherche', title: 'Réplication de Rapach et al. (2013)', desc: "Construction et validation d'une base de données en panel sur les indices boursiers mondiaux, avec des pipelines Python et des statistiques descriptives en Python et Stata.", tags: ['Python', 'Stata', 'Données de panel'], href: '#', link: 'Voir le projet →' },
+      { meta: "Biostatistique · Projet de fin d'études", title: 'CONSTELLATIONS', desc: 'Étude longitudinale sur les transitions de soins de personnes âgées atteintes de troubles neurocognitifs majeurs (103 dyades), analysée par modèles mixtes linéaires et de Poisson.', tags: ['R', 'Modèles mixtes', 'Données longitudinales'], href: '#', link: 'Voir le projet →' },
+      { meta: 'Recherche par enquête · CNESST', title: "Automatisation de rapports d'enquête", desc: "Génération automatisée de rapports de résultats d'enquête en PowerPoint à partir des données, pour produire des livrables cohérents plus rapidement.", tags: ['python-pptx', 'pptxgenjs', "Méthodologie d'enquête"], href: '#contact', link: 'En savoir plus →' }
+    ],
+    skillsKicker: 'compétences', skillsTitle: 'Ce que je maîtrise',
+    skills: [ ['Langages et outils', 'Python, R, Stata 17, Git'], ['Économétrie', 'Données de panel, Newey-West, causalité de Granger'], ['Modélisation', 'Modèles mixtes, régression de Poisson, régression Ridge'], ['Enquêtes', "Méthodologie d'enquête, analyse et production de rapports"] ],
+    pathKicker: 'parcours', pathTitle: 'Parcours',
+    path: [ ['[ANNÉES]', 'Conseiller en recherche et enquêtes', 'CNESST'], ['Mai – août 2026', 'Assistant de recherche', 'Université Laval, sous la direction du professeur Fu'], ['2026', 'Baccalauréat en statistique et science des données', 'Université Laval'] ],
+    contactTitle: 'Un projet, un poste, une question ?', contactSub: 'Écris-moi, je réponds rapidement.'
+  },
+  en: {
+    navLabel: 'Main navigation', navAbout: 'About', navProjects: 'Projects', navSkills: 'Skills', navPath: 'Experience', navContact: 'Contact me',
+    photo: '[YOUR PHOTO]',
+    kicker: '// statistics · data science · Quebec City',
+    tagline: 'I turn survey data and financial time series into clear analyses and automated tools.',
+    ctaProjects: 'See my projects', ctaCv: 'Download my resume',
+    aboutKicker: 'about', aboutTitle: 'Who I am',
+    about1: "I hold a degree in statistics and data science from Université Laval and work as a research and survey advisor at the CNESST, Quebec's workplace health and safety board. I was also a research assistant in financial econometrics and an elected student representative.",
+    about2: '[WHAT DRIVES YOU: 2 OR 3 SENTENCES ON WHAT YOU ENJOY ABOUT DATA AND WHAT YOU ARE LOOKING FOR]',
+    facts: [ ['Based in', 'Quebec City'], ['Languages', 'French · English'], ['Open to', '[ROLE TYPE]'] ],
+    projKicker: 'projects', projTitle: 'Selected projects',
+    projects: [
+      { meta: 'Financial econometrics · Research assistantship', title: 'Replicating Rapach et al. (2013)', desc: 'Built and validated a panel database of global stock indices, with Python pipelines and descriptive statistics in Python and Stata.', tags: ['Python', 'Stata', 'Panel data'], href: '#', link: 'View project →' },
+      { meta: 'Biostatistics · Capstone project', title: 'CONSTELLATIONS', desc: 'Longitudinal study of care transitions for older adults with major neurocognitive disorders (103 dyads), analyzed with linear and Poisson mixed models.', tags: ['R', 'Mixed models', 'Longitudinal data'], href: '#', link: 'View project →' },
+      { meta: 'Survey research · CNESST', title: 'Automated survey reporting', desc: 'Automated generation of PowerPoint survey result reports straight from the data, delivering consistent reports faster.', tags: ['python-pptx', 'pptxgenjs', 'Survey methodology'], href: '#contact', link: 'Learn more →' }
+    ],
+    skillsKicker: 'skills', skillsTitle: 'What I do well',
+    skills: [ ['Languages & tools', 'Python, R, Stata 17, Git'], ['Econometrics', 'Panel data, Newey-West, Granger causality'], ['Modeling', 'Mixed models, Poisson regression, Ridge regression'], ['Surveys', 'Survey methodology, analysis and reporting'] ],
+    pathKicker: 'experience', pathTitle: 'Experience',
+    path: [ ['[YEARS]', 'Research and survey advisor', 'CNESST'], ['May – Aug 2026', 'Research assistant', 'Université Laval, supervised by Professor Fu'], ['2026', 'B.Sc. in Statistics and Data Science', 'Université Laval'] ],
+    contactTitle: 'A project, a role, a question?', contactSub: 'Drop me a line, I reply quickly.'
+  }
+};
+
+function el(tag, cls, text) {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text != null) n.textContent = text;
+  return n;
+}
+
+function render(lang) {
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(n => {
+    const v = t[n.dataset.i18n];
+    if (typeof v === 'string' && !n.querySelector('img')) n.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-attr]').forEach(n => {
+    const [attr, key] = n.dataset.i18nAttr.split(':');
+    n.setAttribute(attr, t[key]);
+  });
+  document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+
+  const facts = document.getElementById('facts');
+  facts.replaceChildren(...t.facts.map(([k, v]) => {
+    const f = el('div', 'fact');
+    f.append(el('div', 'k mono', k), el('div', 'v', v));
+    return f;
+  }));
+
+  const projects = document.getElementById('projects');
+  projects.replaceChildren(...t.projects.map(p => {
+    const a = el('article', 'card project');
+    const tags = el('div', 'tags');
+    p.tags.forEach(x => tags.append(el('span', 'tag mono', x)));
+    const link = el('a', null, p.link);
+    link.href = p.href;
+    a.append(el('p', 'meta mono', p.meta), el('h3', 'display', p.title), el('p', 'desc', p.desc), tags, link);
+    return a;
+  }));
+
+  const skills = document.getElementById('skills');
+  skills.replaceChildren(...t.skills.map(([h, d]) => {
+    const s = el('div', 'skill');
+    s.append(el('h3', 'display', h), el('p', null, d));
+    return s;
+  }));
+
+  const path = document.getElementById('path');
+  path.replaceChildren(...t.path.map(([when, role, org]) => {
+    const r = el('div', 'row');
+    const d = el('div');
+    d.append(el('h3', null, role), el('p', null, org));
+    r.append(el('span', 'when mono', when), d);
+    return r;
+  }));
+}
+
+let lang = 'fr';
+try { const saved = localStorage.getItem('lang'); if (saved === 'fr' || saved === 'en') lang = saved; } catch (e) {}
+document.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => {
+  lang = b.dataset.lang;
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+  render(lang);
+}));
+document.getElementById('year').textContent = new Date().getFullYear();
+render(lang);
+</script>
+</body>
+</html>
