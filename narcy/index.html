@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Joyeux 22 ans, Narcy ✨</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Une petite surprise pour les 22 ans de Narcy">
+<meta property="og:title" content="Joyeux 22 ans, Narcy ✨">
+<meta property="og:image" content="affiche.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ================== À PERSONNALISER : voir le bloc CONFIG en bas du fichier ================== */
+:root{
+  --bg:#1c0d18; --bg2:#2b1224; --rose:#ff9ec4; --rose2:#ffc7dc; --gold:#f2cd82; --gold2:#ffe6b0;
+  --ink:#fff4f8; --muted:#d9b8c8; --card:#fffaf5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(1200px 800px at 80% -10%,#4a1838 0%,transparent 60%),radial-gradient(900px 700px at -10% 30%,#3a1430 0%,transparent 55%),var(--bg);
+  color:var(--ink);font-family:Poppins,system-ui,sans-serif;font-weight:300;overflow-x:hidden;min-height:100vh}
+body.locked{overflow:hidden}
+h2{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:clamp(2rem,5vw,3.2rem);text-align:center;
+  background:linear-gradient(90deg,var(--gold),var(--rose2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shine 6s linear infinite}
+.kicker{display:block;text-align:center;font-size:.8rem;letter-spacing:.35em;text-transform:uppercase;color:var(--rose);margin-bottom:.6rem}
+section{position:relative;padding:clamp(4rem,10vw,7rem) 16px;max-width:1200px;margin:0 auto;z-index:2}
+.lead{text-align:center;color:var(--muted);max-width:560px;margin:1rem auto 0;line-height:1.7}
+@keyframes shine{to{background-position:200% center}}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:1}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:60}
+
+/* ---------- porte d'entrée ---------- */
+#gate{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#4a1838,#140810 70%);transition:opacity 1s,visibility 1s}
+#gate.gone{opacity:0;visibility:hidden}
+.gift{position:relative;width:180px;height:160px;cursor:pointer;animation:wobble 2.2s ease-in-out infinite}
+.gift .box{position:absolute;bottom:0;left:10px;width:160px;height:110px;background:linear-gradient(135deg,#ff7fb0,#e0508d);border-radius:8px;box-shadow:0 20px 60px #ff5fa055}
+.gift .lid{position:absolute;top:20px;left:0;width:180px;height:40px;background:linear-gradient(135deg,#ff9ec4,#ef6aa2);border-radius:8px;transition:transform .9s cubic-bezier(.5,-.4,.3,1.4);transform-origin:20% 100%;z-index:2}
+.gift .rib{position:absolute;left:50%;transform:translateX(-50%);width:26px;background:var(--gold);}
+.gift .box .rib{top:0;bottom:0}.gift .lid .rib{top:0;bottom:0}
+.gift .bow{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:44px}
+.gift.open .lid{transform:translate(40px,-120px) rotate(35deg);opacity:0;transition:transform .9s,opacity .9s .4s}
+@keyframes wobble{0%,100%{transform:rotate(0)}10%{transform:rotate(-4deg)}20%{transform:rotate(4deg)}30%{transform:rotate(0)}}
+.gate-txt{text-align:center;margin-top:2.2rem}
+.gate-txt p{font-family:"Great Vibes",cursive;font-size:clamp(2.2rem,7vw,3.4rem);color:var(--gold2)}
+.gate-txt small{color:var(--muted);letter-spacing:.2em;text-transform:uppercase;font-size:.75rem}
+
+/* ---------- héros ---------- */
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-top:2rem}
+.title{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:clamp(2rem,7vw,4.6rem);letter-spacing:.02em;line-height:1.1}
+.title span{display:inline-block;opacity:0;transform:translateY(-60px) rotate(-12deg)}
+body.go .title span{animation:drop .8s cubic-bezier(.3,1.6,.5,1) forwards;animation-delay:calc(var(--i)*55ms + .3s)}
+@keyframes drop{to{opacity:1;transform:none}}
+.name{font-family:"Great Vibes",cursive;font-size:clamp(3.6rem,15vw,9rem);line-height:1.15;margin-top:.2em;
+  background:linear-gradient(90deg,var(--gold) 0%,var(--gold2) 25%,var(--rose) 50%,var(--gold2) 75%,var(--gold) 100%);background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite;
+  opacity:0;filter:blur(12px);transition:opacity 1.6s 1.6s,filter 1.6s 1.6s;padding:0 .2em}
+body.go .name{opacity:1;filter:none}
+.age{margin-top:1rem;display:flex;align-items:baseline;gap:.6rem;opacity:0;transition:opacity 1s 2.6s}
+body.go .age{opacity:1}
+.age b{font-family:"Playfair Display",serif;font-size:clamp(3rem,10vw,5.5rem);color:var(--rose2);font-weight:700;min-width:1.3em}
+.age i{font-style:normal;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.scroll{margin-top:3rem;color:var(--muted);font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;opacity:0;transition:opacity 1s 3.6s}
+body.go .scroll{opacity:1}.scroll::after{content:"";display:block;width:1px;height:46px;margin:12px auto 0;background:linear-gradient(var(--rose),transparent);animation:drip 2s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- souvenirs (polaroids) ---------- */
+.month{margin:4rem 0 1.5rem;text-align:center;font-family:"Playfair Display",serif;font-style:italic;color:var(--gold);font-size:1.4rem;opacity:0;transform:translateY(20px);transition:.8s}
+.month.in{opacity:1;transform:none}
+.month::before,.month::after{content:"✦";margin:0 .8rem;color:var(--rose);font-style:normal;font-size:.9rem}
+.strip{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(14px,3vw,34px)}
+.pola{background:var(--card);padding:10px 10px 44px;width:clamp(150px,26vw,250px);box-shadow:0 18px 40px #0008;cursor:zoom-in;position:relative;
+  transform:translateY(60px) rotate(var(--r)) scale(.9);opacity:0;transition:transform .9s cubic-bezier(.2,1.2,.4,1),opacity .9s,box-shadow .3s}
+.pola.in{opacity:1;transform:rotate(var(--r))}
+.pola:hover{transform:rotate(0) scale(1.06) translateY(-6px);z-index:3;box-shadow:0 26px 60px #000a}
+.pola img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#eee}
+.pola figcaption{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:"Great Vibes",cursive;font-size:1.25rem;color:#6b3550;padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pola::before{content:"";position:absolute;top:-12px;left:50%;width:70px;height:24px;transform:translateX(-50%) rotate(-3deg);background:#ffd6e7aa;box-shadow:0 1px 3px #0002}
+
+/* ---------- lettre ---------- */
+.envelope{position:relative;width:min(520px,92vw);margin:3rem auto 0;cursor:pointer}
+.env{position:relative;height:300px;background:linear-gradient(#f7d9e5,#eebfd2);border-radius:10px;box-shadow:0 30px 70px #0008;overflow:hidden}
+.env::after{content:"";position:absolute;inset:0;background:linear-gradient(32deg,#e6a9c2 50%,transparent 50.5%),linear-gradient(-32deg,#e9b1c8 50%,transparent 50.5%);background-position:left bottom,right bottom;background-size:50.5% 100%;background-repeat:no-repeat;z-index:3}
+.flap{position:absolute;top:0;left:0;right:0;height:170px;background:linear-gradient(#f2c3d6,#e6a2bf);clip-path:polygon(0 0,100% 0,50% 100%);z-index:4;transform-origin:top;transition:transform .8s,z-index 0s .4s}
+.seal{position:absolute;top:140px;left:50%;transform:translateX(-50%);width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#e45b8c,#a4235a);z-index:5;display:grid;place-items:center;color:#ffd9e6;font-size:24px;box-shadow:0 4px 10px #0005;transition:opacity .4s}
+.envelope.open .flap{transform:rotateX(180deg);z-index:1}
+.envelope.open .seal{opacity:0}
+.envelope .hint{text-align:center;color:var(--muted);margin-top:1rem;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase}
+.paper{background:var(--card);color:#4a2236;border-radius:6px;padding:clamp(1.6rem,5vw,3rem);margin:-40px auto 0;width:min(620px,94vw);box-shadow:0 30px 80px #000a;
+  font-family:"Playfair Display",Georgia,serif;font-size:1.08rem;line-height:1.85;position:relative;z-index:4;max-height:0;opacity:0;overflow:hidden;transition:max-height 1.4s ease,opacity 1s,margin .8s}
+.paper.show{max-height:1600px;opacity:1;margin-top:-20px}
+.paper p{margin-bottom:1em;min-height:1.85em}
+.paper .sig{font-family:"Great Vibes",cursive;font-size:2.2rem;color:#a4235a;text-align:right;margin-top:1rem}
+.caret{display:inline-block;width:2px;height:1.1em;background:#a4235a;vertical-align:-2px;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* ---------- machine à compliments ---------- */
+.machine{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3rem);align-items:center;margin-top:3rem}
+.frame{position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px #000a;border:6px solid var(--card)}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s,transform 6s ease-out}
+.frame img.on{transform:scale(1.08)}
+.quote{font-family:"Playfair Display",serif;font-size:clamp(1.4rem,3.4vw,2.1rem);line-height:1.4;font-style:italic;min-height:6.5em;color:var(--ink)}
+.quote small{display:block;font-style:normal;font-family:Poppins,sans-serif;font-size:.8rem;letter-spacing:.25em;text-transform:uppercase;color:var(--rose);margin-bottom:.8rem}
+@media (max-width:720px){.machine{grid-template-columns:1fr}.quote{min-height:0;text-align:center}.machine .btn{margin:0 auto;display:block}}
+
+/* ---------- vidéo ---------- */
+.video{margin:3rem auto 0;max-width:960px;border-radius:18px;overflow:hidden;box-shadow:0 30px 80px #000a;border:1px solid #ffffff22}
+.video video,.video iframe{width:100%;aspect-ratio:16/9;display:block;background:#000;border:0}
+
+/* ---------- mur ---------- */
+.wall{columns:5 180px;column-gap:12px;margin-top:3rem}
+.wall img{width:100%;margin-bottom:12px;border-radius:10px;display:block;cursor:zoom-in;opacity:0;transform:scale(.92) translateY(20px);transition:opacity .7s,transform .7s,filter .3s;break-inside:avoid}
+.wall img.in{opacity:1;transform:none}
+.wall img:hover{filter:brightness(1.1) saturate(1.1);transform:scale(1.03)}
+
+/* ---------- lightbox ---------- */
+#lb{position:fixed;inset:0;background:#0b0408f0;z-index:70;display:none;align-items:center;justify-content:center;padding:16px}
+#lb.on{display:flex;animation:fade .3s}
+@keyframes fade{from{opacity:0}}
+#lb img{max-width:100%;max-height:86vh;border-radius:8px;box-shadow:0 20px 70px #000}
+#lb .cap{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:var(--muted);font-size:.9rem}
+#lb button{position:absolute;background:#ffffff14;color:#fff;border:0;width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer}
+#lb .x{top:16px;right:16px}#lb .p{left:16px;top:50%}#lb .n{right:16px;top:50%}
+
+footer{text-align:center;padding:5rem 16px 3rem;color:var(--muted);position:relative;z-index:2}
+footer .big{font-family:"Great Vibes",cursive;font-size:clamp(2.6rem,8vw,4.5rem);color:var(--gold2);display:block;margin-bottom:.5rem}
+#music{position:fixed;right:16px;bottom:16px;z-index:40;width:52px;height:52px;border-radius:50%;border:1px solid #ff9ec466;background:#2b1224cc;color:var(--rose2);font-size:20px;cursor:pointer;backdrop-filter:blur(8px);display:none}
+#music.on{display:block}
+#music.playing{animation:pulse 1.6s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 10px #ff9ec420}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body class="locked">
+<canvas id="fx"></canvas><canvas id="confetti"></canvas>
+
+<div id="gate">
+  <div>
+    <div class="gift" id="gift"><div class="lid"><div class="rib"></div><div class="bow">🎀</div></div><div class="box"><div class="rib"></div></div></div>
+    <div class="gate-txt"><p>Une surprise pour toi…</p><small>touche le cadeau pour l’ouvrir</small></div>
+  </div>
+</div>
+
+<button id="music" title="Musique">♫</button>
+<audio id="bgm" src="musique.mp3" loop preload="auto"></audio>
+
+<section id="hero">
+  <div class="title" id="title"></div>
+  <div class="name" id="name"></div>
+  <div class="age"><b id="age">0</b><i>ans</i></div>
+  <div class="scroll">Défile</div>
+</section>
+
+<section id="souvenirs">
+  <span class="kicker">Une année en photos</span>
+  <h2>Nos souvenirs</h2>
+  <p class="lead">Quelques-uns des moments où tu étais la plus belle chose dans le cadre. (C’est-à-dire tous.)</p>
+  <div id="timeline"></div>
+</section>
+
+<section id="lettre">
+  <span class="kicker">Rien que pour toi</span>
+  <h2>Une lettre</h2>
+  <div class="envelope" id="envelope"><div class="env"><div class="flap"></div><div class="seal">♥</div></div><div class="hint">Ouvre-moi</div></div>
+  <div class="paper" id="paper"></div>
+</section>
+
+<section id="compliments">
+  <span class="kicker">Avec preuves à l’appui</span>
+  <h2>La machine à compliments</h2>
+  <div class="machine">
+    <div class="frame" id="frame"></div>
+    <div><div class="quote" id="quote"></div><button class="btn" id="shuffle">Encore une ! 🎲</button></div>
+  </div>
+</section>
+
+<section id="film">
+  <span class="kicker">Le film</span>
+  <h2>Narcy, le montage</h2>
+  <div class="video" id="videobox"></div>
+</section>
+
+<section id="mur">
+  <span class="kicker">Le mur</span>
+  <h2>Toutes ces photos, une seule toi</h2>
+  <div class="wall" id="wall"></div>
+</section>
+
+<footer><span class="big" id="foot"></span><span id="sign"></span></footer>
+
+<div id="lb"><img alt=""><div class="cap"></div><button class="x" aria-label="Fermer">✕</button><button class="p" aria-label="Précédente">‹</button><button class="n" aria-label="Suivante">›</button></div>
+
+<script>
+/* ============================================================
+   CONFIG — modifie librement les textes ci-dessous
+   ============================================================ */
+const CONFIG = {
+  titre: "Joyeux anniversaire",
+  prenom: "Narcy Princesse",
+  age: 22,
+  lettre: [
+    "Narcy, ma princesse,",
+    "Joyeux 22 ans ! En triant nos photos, je me suis rendu compte d’une chose : il y en a des centaines, et tu es belle sur absolument toutes. C’est un peu injuste pour le reste du monde.",
+    "Merci pour les fous rires, pour ta douceur, pour ta patience quand je suis impossible, et pour tous ces petits moments qui, mis bout à bout, font une année magnifique.",
+    "Je te souhaite une année à ton image : lumineuse, drôle, pleine de rêves qui se réalisent… et encore plein de photos ensemble.",
+    "Je t’aime."
+  ],
+  signature: "Ton Ebony",
+  // Lien YouTube de la vidéo (non répertoriée). Laisser vide pour utiliser le fichier montage-narcy.mp4
+  youtube: "https://youtu.be/4EJm915JvDA",
+  // Légendes facultatives par numéro de photo (01 à 39). Sinon, la date s'affiche.
+  legendes: {
+    // "07": "Le jour où tu as volé mes frites",
+  },
+  compliments: [
+    "Pièce à conviction n°{n} : trop belle, c’est suspect.",
+    "Niveau de beauté : erreur, l’appareil n’a pas pu mesurer.",
+    "Cette photo devrait être exposée au musée.",
+    "Mannequin ? Non. Juste Narcy, un jour normal.",
+    "Le photographe mérite une augmentation. (C’est moi.)",
+    "Alerte : sourire beaucoup trop puissant détecté.",
+    "22 ans et toujours aussi photogénique. C’est pas juste.",
+    "Princesse certifiée, sceau royal inclus 👑",
+    "Si tu cherchais une preuve que tu es magnifique : la voilà.",
+    "Moi, derrière l’appareil : 😍",
+    "Cette photo a fait planter mon téléphone de jalousie.",
+    "Scientifiquement prouvé : la plus jolie de la galerie."
+  ]
+};
+const PHOTOS = [["01.jpg", "2025-09-03", 0.753], ["02.jpg", "2025-09-04", 0.753], ["03.jpg", "2025-09-05", 0.753], ["04.jpg", "2025-09-17", 0.753], ["05.jpg", "2025-09-29", 0.753], ["06.jpg", "2025-10-09", 0.753], ["07.jpg", "2025-10-09", 0.75], ["08.jpg", "2025-10-16", 0.753], ["09.jpg", "2025-11-01", 0.753], ["10.jpg", "2025-11-10", 0.753], ["11.jpg", "2025-11-19", 0.753], ["12.jpg", "2025-11-19", 0.753], ["13.jpg", "2025-11-19", 0.753], ["14.jpg", "2025-11-29", 0.753], ["15.jpg", "2025-11-29", 0.753], ["16.jpg", "2025-11-29", 0.753], ["17.jpg", "2025-11-29", 0.753], ["18.jpg", "2025-12-26", 0.753], ["19.jpg", "2026-01-14", 0.753], ["20.jpg", "2026-01-27", 0.753], ["21.jpg", "2026-01-27", 0.753], ["22.jpg", "2026-01-27", 0.753], ["23.jpg", "2026-02-15", 0.753], ["24.jpg", "2026-02-15", 0.753], ["25.jpg", "2026-02-15", 0.753], ["26.jpg", "2026-02-15", 0.753], ["27.jpg", "2026-04-10", 0.753], ["28.jpg", "2026-05-21", 0.753], ["29.jpg", "2026-05-21", 0.753], ["30.jpg", "2026-06-20", 0.753], ["31.jpg", "2026-06-20", 0.753], ["32.jpg", "2026-06-29", 0.753], ["33.jpg", "2026-06-29", 0.753], ["34.jpg", "2026-06-29", 0.753], ["35.jpg", "2026-08-01", 0.753], ["36.jpg", "2026-08-28", 0.753], ["37.jpg", "2026-08-28", 0.753], ["38.jpg", "2026-10-19", 0.753], ["39.jpg", "2026-10-19", 0.753]]; // [fichier, date, ratio]
+
+/* ============================================================ */
+const $=s=>document.querySelector(s), MOIS=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+const num=f=>f.split('.')[0];
+const fmt=d=>{const[y,m,j]=d.split('-');return `${+j} ${MOIS[m-1]} ${y}`};
+const cap=p=>CONFIG.legendes[num(p[0])]||fmt(p[1]);
+
+/* titres */
+$('#title').innerHTML=[...CONFIG.titre].map((c,i)=>`<span style="--i:${i}">${c===' '?'&nbsp;':c}</span>`).join('');
+$('#name').textContent=CONFIG.prenom;
+$('#foot').textContent=`Joyeux ${CONFIG.age} ans, ${CONFIG.prenom.split(' ')[0]} !`;
+$('#sign').textContent=`Avec tout mon amour — ${CONFIG.signature} ♥`;
+document.title=`Joyeux ${CONFIG.age} ans, ${CONFIG.prenom.split(' ')[0]} ✨`;
+
+/* musique */
+const bgm=$('#bgm'), mb=$('#music'); bgm.volume=.55;
+function playMusic(){bgm.play().then(()=>mb.classList.add('playing')).catch(()=>{})}
+mb.onclick=()=>{if(bgm.paused)playMusic();else{bgm.pause();mb.classList.remove('playing')}};
+const ytId=(CONFIG.youtube.match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/)||[])[1];
+const vb=$('#videobox');
+if(ytId){vb.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${ytId}?rel=0&modestbranding=1" title="Narcy, le montage" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+  new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!bgm.paused){bgm.pause();mb.classList.remove('playing')}}),{threshold:.6}).observe(vb);}
+else{vb.innerHTML='<video id="vid" src="montage-narcy.mp4" poster="affiche.jpg" controls playsinline preload="metadata"></video>';
+  $('#vid').addEventListener('play',()=>{bgm.pause();mb.classList.remove('playing')});}
+
+/* ouverture du cadeau */
+$('#gift').onclick=()=>{
+  $('#gift').classList.add('open'); playMusic(); burst(innerWidth/2,innerHeight/2,180);
+  setTimeout(()=>{$('#gate').classList.add('gone');document.body.classList.remove('locked');document.body.classList.add('go');mb.classList.add('on');countAge()},900);
+};
+function countAge(){let n=0;const t=setInterval(()=>{$('#age').textContent=++n;if(n>=CONFIG.age){clearInterval(t);setTimeout(()=>burst(innerWidth/2,innerHeight*.6,120),200)}},90)}
+
+/* apparition au défilement */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+
+/* frise par mois */
+const groups={}; PHOTOS.forEach((p,i)=>{const k=p[1].slice(0,7);(groups[k]=groups[k]||[]).push(i)});
+const tl=$('#timeline');
+Object.keys(groups).sort().forEach(k=>{
+  const[y,m]=k.split('-'); const h=document.createElement('div'); h.className='month'; h.textContent=`${MOIS[m-1][0].toUpperCase()+MOIS[m-1].slice(1)} ${y}`; tl.append(h); io.observe(h);
+  const s=document.createElement('div'); s.className='strip'; tl.append(s);
+  groups[k].forEach((i,j)=>{const p=PHOTOS[i];const f=document.createElement('figure');f.className='pola';f.style.setProperty('--r',(((i*37)%11)-5)+'deg');f.style.transitionDelay=(j*90)+'ms';
+    f.innerHTML=`<img loading="lazy" src="mini/${p[0]}" alt=""><figcaption>${cap(p)}</figcaption>`;f.onclick=()=>openLB(i);s.append(f);io.observe(f)});
+});
+
+/* mur */
+const wall=$('#wall'); PHOTOS.forEach((p,i)=>{const im=new Image();im.loading='lazy';im.src='mini/'+p[0];im.alt='';im.style.aspectRatio=p[2];im.style.transitionDelay=((i%5)*70)+'ms';im.onclick=()=>openLB(i);wall.append(im);io.observe(im)});
+
+/* lightbox */
+const lb=$('#lb'); let cur=0;
+function openLB(i){cur=(i+PHOTOS.length)%PHOTOS.length;lb.querySelector('img').src='photos/'+PHOTOS[cur][0];lb.querySelector('.cap').textContent=cap(PHOTOS[cur]);lb.classList.add('on')}
+lb.querySelector('.x').onclick=()=>lb.classList.remove('on');
+lb.querySelector('.p').onclick=e=>{e.stopPropagation();openLB(cur-1)};
+lb.querySelector('.n').onclick=e=>{e.stopPropagation();openLB(cur+1)};
+lb.onclick=e=>{if(e.target===lb)lb.classList.remove('on')};
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')openLB(cur-1);if(e.key==='ArrowRight')openLB(cur+1)});
+let tx=0;lb.addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});lb.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)openLB(cur+(d<0?1:-1))});
+
+/* lettre */
+let opened=false;
+$('#envelope').onclick=()=>{if(opened)return;opened=true;$('#envelope').classList.add('open');$('#envelope .hint').style.opacity=0;
+  setTimeout(()=>{$('#paper').classList.add('show');typeLetter()},700)};
+async function typeLetter(){const P=$('#paper');P.innerHTML='';const caret=document.createElement('span');caret.className='caret';
+  for(const line of CONFIG.lettre){const p=document.createElement('p');P.append(p);p.append(caret);
+    for(const ch of line){caret.before(ch);await new Promise(r=>setTimeout(r,ch.match(/[.,!?…]/)?220:28))}await new Promise(r=>setTimeout(r,350))}
+  caret.remove();const s=document.createElement('div');s.className='sig';s.textContent=CONFIG.signature;P.append(s);
+  const r=s.getBoundingClientRect();burst(r.left+r.width/2,r.top,90,['#ff9ec4','#ff5f9e','#ffc7dc'])}
+
+/* machine à compliments */
+const fr=$('#frame'); let lastI=-1,lastQ=-1,nShuf=0;
+function shuffle(){let i;do i=Math.floor(Math.random()*PHOTOS.length);while(i===lastI);lastI=i;let q;do q=Math.floor(Math.random()*CONFIG.compliments.length);while(q===lastQ);lastQ=q;nShuf++;
+  const im=new Image();im.src='photos/'+PHOTOS[i][0];im.alt='';im.style.opacity=0;im.onclick=()=>openLB(i);im.style.cursor='zoom-in';
+  im.onload=()=>{fr.append(im);requestAnimationFrame(()=>{im.style.opacity=1;im.classList.add('on')});setTimeout(()=>{[...fr.children].slice(0,-1).forEach(c=>c.remove())},600)};
+  $('#quote').innerHTML=`<small>${fmt(PHOTOS[i][1])}</small>${CONFIG.compliments[q].replace('{n}',nShuf)}`}
+$('#shuffle').onclick=shuffle; shuffle();
+
+/* confettis */
+const cc=$('#confetti'),cx=cc.getContext('2d');let parts=[];
+function size(){cc.width=fx.width=innerWidth*devicePixelRatio;cc.height=fx.height=innerHeight*devicePixelRatio}
+const fx=$('#fx'),fxx=fx.getContext('2d');size();addEventListener('resize',size);
+function burst(x,y,n,cols=['#f2cd82','#ffe6b0','#ff9ec4','#ffc7dc','#ffffff','#e45b8c']){const d=devicePixelRatio;
+  for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,v=4+Math.random()*9;parts.push({x:x*d,y:y*d,vx:Math.cos(a)*v*d,vy:(Math.sin(a)*v-6)*d,r:(3+Math.random()*4)*d,c:cols[i%cols.length],rot:Math.random()*6,vr:(Math.random()-.5)*.4,l:1,shape:Math.random()<.3})}
+  if(!rafC)rafC=requestAnimationFrame(tickC)}
+let rafC=0;
+function tickC(){cx.clearRect(0,0,cc.width,cc.height);const d=devicePixelRatio;
+  parts=parts.filter(p=>p.l>0&&p.y<cc.height+40);
+  for(const p of parts){p.vy+=.25*d;p.vx*=.985;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.l-=.006;cx.save();cx.globalAlpha=Math.min(1,p.l*2);cx.translate(p.x,p.y);cx.rotate(p.rot);cx.fillStyle=p.c;
+    if(p.shape){cx.font=`${p.r*3}px serif`;cx.fillText('♥',0,0)}else cx.fillRect(-p.r,-p.r/2,p.r*2,p.r);cx.restore()}
+  cx.globalAlpha=1;
+  rafC=parts.length?requestAnimationFrame(tickC):0}
+/* fond : petits cœurs et paillettes qui flottent */
+const fl=[...Array(innerWidth<700?18:34)].map(()=>({x:Math.random(),y:Math.random(),s:.3+Math.random(),v:.0004+Math.random()*.0008,h:Math.random()<.35,p:Math.random()*6}));
+(function tick(t){const W=fx.width,H=fx.height,d=devicePixelRatio;fxx.clearRect(0,0,W,H);
+  for(const f of fl){f.y-=f.v;if(f.y<-.05){f.y=1.05;f.x=Math.random()}const x=(f.x+Math.sin(t/2000+f.p)*.01)*W,y=f.y*H;
+    fxx.globalAlpha=.18+.25*Math.abs(Math.sin(t/900+f.p));
+    if(f.h){fxx.fillStyle='#ff9ec4';fxx.font=`${14*f.s*d+6}px serif`;fxx.fillText('♥',x,y)}else{fxx.fillStyle='#f2cd82';fxx.beginPath();fxx.arc(x,y,1.6*f.s*d,0,7);fxx.fill()}}
+  requestAnimationFrame(tick)})(0);
+</script>
+</body>
+</html>
