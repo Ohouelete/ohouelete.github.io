@@ -65,6 +65,8 @@ h2{margin:0;font-size:clamp(34px,5vw,44px);line-height:1.1}
 .project .meta{margin:0;font-size:12px;color:var(--muted)}
 .project h3{margin:0;font-size:26px;line-height:1.2}
 .project p.desc{margin:0;color:var(--soft)}
+.project{color:var(--text);text-decoration:none}.project:hover{color:var(--text)}
+.project .more{font-size:13px;color:var(--accent)}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
 .tag{font-size:12px;padding:4px 10px;border:1px solid var(--line2);border-radius:999px;color:var(--soft)}
 .skill{flex:1 1 260px;min-width:0;border-top:2px solid var(--accent);padding-top:20px;display:flex;flex-direction:column;gap:8px}
@@ -175,7 +177,7 @@ footer{padding-top:24px;padding-bottom:24px;border-top:1px solid var(--line);fon
       <p data-i18n="contactSub">Écris-moi, je réponds rapidement.</p>
     </div>
     <div class="actions">
-      <a class="btn btn-primary" href="mailto:amarckland@gmail.com">amarckland@gmail.com</a>
+      <a class="btn btn-primary" href="mailto:contact@marckland.com">contact@marckland.com</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/ohou%C3%A9l%C3%A9t%C3%A9-marck-land-ahouansou-6b6b03239" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn btn-ghost" href="https://github.com/Ohouelete" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -196,11 +198,11 @@ const T = {
     aboutKicker: 'à propos', aboutTitle: 'Qui je suis',
     about1: "Diplômé en statistique et science des données de l'Université Laval, j'ai été conseiller en recherche et enquêtes à la CNESST et assistant de recherche en économétrie financière. J'ai aussi été auxiliaire d'enseignement en probabilités et statistique, et représentant étudiant à l'Association des statisticiennes et statisticiens du Québec.",
     facts: [ ['Basé à', 'Québec'], ['Langues', 'Français · Anglais'], ['Formation', 'B.Sc. statistique et science des données'] ],
-    projKicker: 'projets', projTitle: 'Projets choisis',
+    projKicker: 'projets', projTitle: 'Projets choisis', more: 'Voir le projet →',
     projects: [
-      { meta: 'Économétrie financière · Assistanat de recherche', title: 'Réplication de Rapach et al. (2013)', desc: "Construction et validation d'une base de données en panel sur les indices boursiers mondiaux, avec des pipelines Python et des statistiques descriptives en Python et Stata.", tags: ['Python', 'Stata', 'Données de panel'] },
-      { meta: "Biostatistique · Projet de fin d'études", title: 'CONSTELLATIONS', desc: 'Étude longitudinale sur les transitions de soins de personnes âgées atteintes de troubles neurocognitifs majeurs (103 dyades), analysée par modèles mixtes linéaires et de Poisson.', tags: ['R', 'Modèles mixtes', 'Données longitudinales'] },
-      { meta: 'Recherche par enquête · CNESST', title: "Automatisation de rapports d'enquête", desc: "Génération automatisée de rapports de résultats d'enquête en PowerPoint à partir des données, pour produire des livrables cohérents plus rapidement.", tags: ['python-pptx', 'pptxgenjs', "Méthodologie d'enquête"] }
+      { slug: 'rapach-2013', meta: 'Économétrie financière · Assistanat de recherche', title: 'Réplication de Rapach et al. (2013)', desc: "Construction et validation d'une base de données en panel sur les indices boursiers mondiaux, avec des pipelines Python et des statistiques descriptives en Python et Stata.", tags: ['Python', 'Stata', 'Données de panel'] },
+      { slug: 'constellations', meta: "Biostatistique · Projet de fin d'études", title: 'CONSTELLATIONS', desc: 'Étude longitudinale sur les transitions de soins de personnes âgées atteintes de troubles neurocognitifs majeurs (103 dyades), analysée par modèles mixtes linéaires et de Poisson.', tags: ['R', 'Modèles mixtes', 'Données longitudinales'] },
+      { slug: 'rapports-enquete', meta: 'Recherche par enquête · CNESST', title: "Automatisation de rapports d'enquête", desc: "Génération automatisée de rapports de résultats d'enquête en PowerPoint à partir des données, pour produire des livrables cohérents plus rapidement.", tags: ['python-pptx', 'pptxgenjs', "Méthodologie d'enquête"] }
     ],
     skillsKicker: 'compétences', skillsTitle: 'Ce que je maîtrise',
     skills: [ ['Langages et outils', 'Python, R, SAS, SQL, Stata, Power BI, Git'], ['Modélisation', 'Modèles mixtes, régression linéaire et logistique, séries temporelles, apprentissage automatique'], ['Économétrie', 'Données de panel, Newey-West, causalité de Granger'], ['Enquêtes et données', "Méthodologie d'enquête, validation de données, MongoDB, Neo4j"] ],
@@ -217,11 +219,11 @@ const T = {
     aboutKicker: 'about', aboutTitle: 'Who I am',
     about1: "I hold a degree in statistics and data science from Université Laval. I worked as a research and survey advisor at the CNESST, Quebec's workplace health and safety board, and as a research assistant in financial econometrics. I was also a teaching assistant in probability and statistics, and a student representative for the Quebec association of statisticians (ASSQ).",
     facts: [ ['Based in', 'Quebec City'], ['Languages', 'French · English'], ['Education', 'B.Sc. Statistics and Data Science'] ],
-    projKicker: 'projects', projTitle: 'Selected projects',
+    projKicker: 'projects', projTitle: 'Selected projects', more: 'View project →',
     projects: [
-      { meta: 'Financial econometrics · Research assistantship', title: 'Replicating Rapach et al. (2013)', desc: 'Built and validated a panel database of global stock indices, with Python pipelines and descriptive statistics in Python and Stata.', tags: ['Python', 'Stata', 'Panel data'] },
-      { meta: 'Biostatistics · Capstone project', title: 'CONSTELLATIONS', desc: 'Longitudinal study of care transitions for older adults with major neurocognitive disorders (103 dyads), analyzed with linear and Poisson mixed models.', tags: ['R', 'Mixed models', 'Longitudinal data'] },
-      { meta: 'Survey research · CNESST', title: 'Automated survey reporting', desc: 'Automated generation of PowerPoint survey result reports straight from the data, delivering consistent reports faster.', tags: ['python-pptx', 'pptxgenjs', 'Survey methodology'] }
+      { slug: 'rapach-2013', meta: 'Financial econometrics · Research assistantship', title: 'Replicating Rapach et al. (2013)', desc: 'Built and validated a panel database of global stock indices, with Python pipelines and descriptive statistics in Python and Stata.', tags: ['Python', 'Stata', 'Panel data'] },
+      { slug: 'constellations', meta: 'Biostatistics · Capstone project', title: 'CONSTELLATIONS', desc: 'Longitudinal study of care transitions for older adults with major neurocognitive disorders (103 dyads), analyzed with linear and Poisson mixed models.', tags: ['R', 'Mixed models', 'Longitudinal data'] },
+      { slug: 'rapports-enquete', meta: 'Survey research · CNESST', title: 'Automated survey reporting', desc: 'Automated generation of PowerPoint survey result reports straight from the data, delivering consistent reports faster.', tags: ['python-pptx', 'pptxgenjs', 'Survey methodology'] }
     ],
     skillsKicker: 'skills', skillsTitle: 'What I do well',
     skills: [ ['Languages & tools', 'Python, R, SAS, SQL, Stata, Power BI, Git'], ['Modeling', 'Mixed models, linear and logistic regression, time series, machine learning'], ['Econometrics', 'Panel data, Newey-West, Granger causality'], ['Surveys & data', 'Survey methodology, data validation, MongoDB, Neo4j'] ],
@@ -260,10 +262,11 @@ function render(lang) {
 
   const projects = document.getElementById('projects');
   projects.replaceChildren(...t.projects.map(p => {
-    const a = el('article', 'card project');
+    const a = el('a', 'card project');
+    a.href = 'projets/' + p.slug + '.html';
     const tags = el('div', 'tags');
     p.tags.forEach(x => tags.append(el('span', 'tag mono', x)));
-    a.append(el('p', 'meta mono', p.meta), el('h3', 'display', p.title), el('p', 'desc', p.desc), tags);
+    a.append(el('p', 'meta mono', p.meta), el('h3', 'display', p.title), el('p', 'desc', p.desc), tags, el('span', 'more mono', t.more));
     return a;
   }));
 
